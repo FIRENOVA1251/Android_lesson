@@ -6,6 +6,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -51,25 +52,32 @@ public class ElementActivity extends AppCompatActivity {
 
                     String h = height_edit.getText().toString();
                     String w = weight_edit.getText().toString();
-                    double h_d = Double.parseDouble(h);
-                    double w_d = Double.parseDouble(w);
+                    if (h.equals("") || w.equals("")){
+                        Toast.makeText(getApplicationContext(), "Please enter valid data!", Toast.LENGTH_SHORT).show();
 
-                    double result_d = w_d / (h_d * h_d);
+                    }else{
 
-                    DecimalFormat df = new DecimalFormat("0.000");
-                    String result = df.format(result_d);
 
-                    result_text.setText(result);
+                        double h_d = Double.parseDouble(h);
+                        double w_d = Double.parseDouble(w);
 
-                    if (result_d > 20){
-                        comment.setVisibility(View.VISIBLE);
-                        imageView.setImageResource(R.drawable.fatdog);
+                        double result_d = w_d / (h_d * h_d);
+
+                        DecimalFormat df = new DecimalFormat("0.000");
+                        String result = df.format(result_d);
+
+                        result_text.setText(result);
+
+                        if (result_d > 20){
+                            comment.setVisibility(View.VISIBLE);
+                            imageView.setImageResource(R.drawable.fatdog);
+                        }
+                        else{
+                            comment.setVisibility(View.GONE);
+                            imageView.setImageResource(R.drawable.dog);
+                        }
+
                     }
-                    else{
-                        comment.setVisibility(View.GONE);
-                        imageView.setImageResource(R.drawable.dog);
-                    }
-
                     break;
 
                 default:
