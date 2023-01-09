@@ -26,6 +26,11 @@
                 android:value="" />
         </activity>
 
+        <activity
+            android:name=".ElementActivity"
+            android:exported="true">
+        </activity>
+
     </application>
 
 </manifest>

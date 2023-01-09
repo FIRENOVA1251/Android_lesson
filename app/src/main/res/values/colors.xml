@@ -9,4 +9,10 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="gray">#FF808080</color>
+    <color name="transparent">#0000FFFF</color>
+
+    <color name="title">#FF7D4200</color>
+    <color name="content">#FF343F4B</color>
+    <color name="line_button">#FF969FAA</color>
+    <color name="edit_text">#FF8492A6</color>
 </resources>
