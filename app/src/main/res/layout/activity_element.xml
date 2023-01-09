@@ -5,7 +5,6 @@
     android:background="@color/white"
     android:orientation="vertical">
 
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -17,8 +16,7 @@
             android:layout_marginEnd="20dp"
             android:orientation="vertical">
 
-
-            <!--Spec-->
+<!--  asdfasdfa -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -39,6 +37,7 @@
 
             </View>
 
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
@@ -50,19 +49,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="Height"
+                    android:text="HEIGHT"
                     android:textColor="@color/content"
                     android:textSize="16sp">
 
                 </TextView>
 
 
-
                 <EditText
                     android:id="@+id/height_edit"
                     android:layout_width="130dp"
                     android:layout_height="match_parent"
-                    android:layout_marginEnd="10dp"
                     android:layout_toStartOf="@+id/height_unit"
                     android:inputType="numberDecimal|numberSigned"
                     android:text=""
@@ -76,23 +73,25 @@
                     android:layout_width="30dp"
                     android:layout_height="match_parent"
                     android:layout_alignParentEnd="true"
-                    android:gravity="center_vertical"
+                    android:gravity="center"
                     android:text="m"
                     android:textColor="@color/content"
                     android:textSize="14sp">
 
                 </TextView>
 
+
             </RelativeLayout>
+
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="5dp">
 
                 <TextView
-                    android:id="@+id/weight"
+                    android:id="@+id/weight_title"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center"
@@ -103,12 +102,10 @@
                 </TextView>
 
 
-
                 <EditText
                     android:id="@+id/weight_edit"
                     android:layout_width="130dp"
                     android:layout_height="match_parent"
-                    android:layout_marginEnd="10dp"
                     android:layout_toStartOf="@+id/weight_unit"
                     android:inputType="numberDecimal|numberSigned"
                     android:text=""
@@ -122,18 +119,20 @@
                     android:layout_width="30dp"
                     android:layout_height="match_parent"
                     android:layout_alignParentEnd="true"
-                    android:gravity="center_vertical"
+                    android:gravity="center"
                     android:text="kg"
                     android:textColor="@color/content"
                     android:textSize="14sp">
 
                 </TextView>
 
+
             </RelativeLayout>
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="5dp">
 
                 <TextView
@@ -148,10 +147,9 @@
                 </TextView>
 
 
-
                 <TextView
                     android:id="@+id/result"
-                    android:layout_width="170dp"
+                    android:layout_width="160dp"
                     android:layout_height="match_parent"
                     android:layout_alignParentEnd="true"
                     android:gravity="center"
@@ -161,12 +159,13 @@
 
                 </TextView>
 
+
             </RelativeLayout>
 
             <Button
-                android:id="@+id/calculate_btn"
+                android:id="@+id/calculate"
                 android:layout_width="200dp"
-                android:layout_height="50dp"
+                android:layout_height="60dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="35dp"
                 android:layout_marginBottom="20dp"
@@ -178,20 +177,17 @@
 
             </Button>
 
-
             <TextView
                 android:id="@+id/comment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:text="You got a fat dog"
+                android:gravity="center"
+                android:text="You got a fat dog!"
                 android:textSize="25sp"
                 android:textColor="@color/black"
-                android:gravity="center"
                 android:visibility="gone">
 
             </TextView>
-
 
             <ImageView
                 android:id="@+id/image"
@@ -204,14 +200,6 @@
             </ImageView>
 
 
-
-
         </LinearLayout>
-
-
-
-
-
     </ScrollView>
-
 </LinearLayout>

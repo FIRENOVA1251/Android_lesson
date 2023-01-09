@@ -62,15 +62,9 @@ public class MainActivity extends AppCompatActivity {
 
                 case R.id.btn_1:
 
-//                    temp = left_text.getText().toString();
-//                    temp = temp + "1";
-//                    left_text.setText(temp);
-
-
                     Intent intent = new Intent();
                     intent.setClass(MainActivity.this, ElementActivity.class);
                     startActivity(intent);
-
 
                     break;
 

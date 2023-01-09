@@ -19,6 +19,8 @@ public class ElementActivity extends AppCompatActivity {
     Button calculate;
     ImageView imageView;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,13 +35,14 @@ public class ElementActivity extends AppCompatActivity {
         height_edit = findViewById(R.id.height_edit);
         weight_edit = findViewById(R.id.weight_edit);
         result_text = findViewById(R.id.result);
-        calculate = findViewById(R.id.calculate_btn);
+        calculate = findViewById(R.id.calculate);
         calculate.setOnClickListener(actionBtnOnClick);
 
         comment = findViewById(R.id.comment);
         imageView = findViewById(R.id.image);
 
     }
+
 
     private View.OnClickListener actionBtnOnClick = new View.OnClickListener(){
 
@@ -48,15 +51,16 @@ public class ElementActivity extends AppCompatActivity {
 
             switch (view.getId()){
 
-                case R.id.calculate_btn:
+                case R.id.calculate:
 
                     String h = height_edit.getText().toString();
                     String w = weight_edit.getText().toString();
+
                     if (h.equals("") || w.equals("")){
-                        Toast.makeText(getApplicationContext(), "Please enter valid data!", Toast.LENGTH_SHORT).show();
+
+                        Toast.makeText(getApplicationContext(), "Please enter valid data!!!", Toast.LENGTH_SHORT).show();
 
                     }else{
-
 
                         double h_d = Double.parseDouble(h);
                         double w_d = Double.parseDouble(w);
@@ -69,6 +73,7 @@ public class ElementActivity extends AppCompatActivity {
                         result_text.setText(result);
 
                         if (result_d > 20){
+
                             comment.setVisibility(View.VISIBLE);
                             imageView.setImageResource(R.drawable.fatdog);
                         }
@@ -76,7 +81,6 @@ public class ElementActivity extends AppCompatActivity {
                             comment.setVisibility(View.GONE);
                             imageView.setImageResource(R.drawable.dog);
                         }
-
                     }
                     break;
 
@@ -85,4 +89,7 @@ public class ElementActivity extends AppCompatActivity {
             }
         }
     };
+
+
+
 }
