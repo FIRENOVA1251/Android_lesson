@@ -1,9 +1,11 @@
 package com.example.novaapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,7 +19,8 @@ public class ElementActivity extends AppCompatActivity {
     EditText height_edit, weight_edit;
     TextView result_text, comment;
     Button calculate;
-    ImageView imageView;
+    ImageView imageView, imageView2;
+  //  ImageButton imageView;
 
 
 
@@ -31,6 +34,9 @@ public class ElementActivity extends AppCompatActivity {
     }
 
     private void init_View(){
+
+        imageView = findViewById(R.id.back);
+        imageView.setOnClickListener(actionBtnOnClick);
 
         height_edit = findViewById(R.id.height_edit);
         weight_edit = findViewById(R.id.weight_edit);
@@ -50,6 +56,13 @@ public class ElementActivity extends AppCompatActivity {
         public void onClick(View view) {
 
             switch (view.getId()){
+
+                case R.id.back:
+
+                    Intent intent = new Intent();
+                    intent.setClass(ElementActivity.this, MainActivity.class);
+                    startActivity(intent);
+                    break;
 
                 case R.id.calculate:
 

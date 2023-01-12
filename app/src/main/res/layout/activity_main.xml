@@ -75,6 +75,15 @@
 
         </Button>
 
+        <Button
+            android:id="@+id/btn_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="list"
+            android:textColor="@color/black">
+
+        </Button>
+
 
     </LinearLayout>
 

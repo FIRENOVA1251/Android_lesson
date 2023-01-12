@@ -1,5 +1,6 @@
 package com.example.novaapplication;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,12 +12,16 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     TextView left_text, right_text;
-    Button left_btn, right_btn, btn_1;
+    Button left_btn, right_btn, btn_1, btn_list;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+//        ActionBar actionBar = getSupportActionBar();
+//        if(actionBar != null){
+//            actionBar.hide();
+//        }
 
         init_View();
     }
@@ -33,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
 
         btn_1 = findViewById(R.id.btn_1);
         btn_1.setOnClickListener(actionBtnOnClick);
+
+        btn_list = findViewById(R.id.btn_list);
+        btn_list.setOnClickListener(actionBtnOnClick);
 
     }
 
@@ -64,6 +72,13 @@ public class MainActivity extends AppCompatActivity {
 
                     Intent intent = new Intent();
                     intent.setClass(MainActivity.this, ElementActivity.class);
+                    startActivity(intent);
+
+                    break;
+                case R.id.btn_list:
+
+                    intent = new Intent();
+                    intent.setClass(MainActivity.this, ListActivity.class);
                     startActivity(intent);
 
                     break;
