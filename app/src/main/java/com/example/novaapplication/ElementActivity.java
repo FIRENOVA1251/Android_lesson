@@ -20,7 +20,6 @@ public class ElementActivity extends AppCompatActivity {
     TextView result_text, comment;
     Button calculate;
     ImageView imageView, imageView2;
-  //  ImageButton imageView;
 
 
 
@@ -35,8 +34,8 @@ public class ElementActivity extends AppCompatActivity {
 
     private void init_View(){
 
-        imageView = findViewById(R.id.back);
-        imageView.setOnClickListener(actionBtnOnClick);
+        imageView2 = findViewById(R.id.back);
+        imageView2.setOnClickListener(actionBtnOnClick);
 
         height_edit = findViewById(R.id.height_edit);
         weight_edit = findViewById(R.id.weight_edit);

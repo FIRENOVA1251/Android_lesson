@@ -9,7 +9,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.novaapplication.ListActivity;
 import com.example.novaapplication.R;
 
 import org.json.JSONException;

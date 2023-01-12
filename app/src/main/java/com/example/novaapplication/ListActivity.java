@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.novaapplication.adapter.ListAdapter;
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class ListActivity extends AppCompatActivity {
@@ -53,7 +52,7 @@ public class ListActivity extends AppCompatActivity {
 
 
         recyclerView = findViewById(R.id.list);
-        //LinearLayoutManager
+        //set LayoutManager
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         String[] listArray = mData.toArray(new String[0]);
@@ -61,28 +60,6 @@ public class ListActivity extends AppCompatActivity {
 
         recyclerView.setAdapter(listAdapter);
     }
-
-    private View.OnClickListener actionBtnOnClick = new View.OnClickListener(){
-
-        @Override
-        public void onClick(View view) {
-
-            switch (view.getId()){
-
-                case R.id.back:
-
-                    Intent intent = new Intent();
-                    intent.setClass(ListActivity.this, MainActivity.class);
-                    startActivity(intent);
-                    break;
-
-
-                default:
-                    break;
-            }
-        }
-    };
-
 
 
 }
