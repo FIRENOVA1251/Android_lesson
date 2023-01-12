@@ -38,7 +38,7 @@ public class ListActivity extends AppCompatActivity {
                 " \"content\":\"kkkkk\"\n" +
                 "}";
 
-        for (int i = 1; i < 5; i++){
+        for (int i = 1; i < 10; i++){
             mData.add(json1);
             mData.add(json2);
         }
