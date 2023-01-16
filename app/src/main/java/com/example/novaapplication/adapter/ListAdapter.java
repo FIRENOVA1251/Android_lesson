@@ -1,5 +1,6 @@
 package com.example.novaapplication.adapter;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,6 +41,16 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
             name = itemView.findViewById(R.id.message_name);
             content = itemView.findViewById(R.id.message_content);
             msgSelfie = itemView.findViewById(R.id.message_selfie);
+
+            msgSelfie.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    content.setText("1233gg");
+
+
+                }
+            });
 
         }
     }

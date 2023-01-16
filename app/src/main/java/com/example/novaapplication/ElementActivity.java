@@ -2,6 +2,8 @@ package com.example.novaapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,8 +18,8 @@ import java.text.DecimalFormat;
 
 public class ElementActivity extends AppCompatActivity {
 
-    EditText height_edit, weight_edit;
-    TextView result_text, comment;
+    EditText height_edit, weight_edit, usd;
+    TextView result_text, comment, aud;
     Button calculate;
     ImageView imageView, imageView2;
 
@@ -45,6 +47,41 @@ public class ElementActivity extends AppCompatActivity {
 
         comment = findViewById(R.id.comment);
         imageView = findViewById(R.id.image);
+
+        usd = findViewById(R.id.usd);
+        aud = findViewById(R.id.aud);
+
+        usd.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int i, int i1, int i2) {
+
+                String temp = usd.getText().toString();
+                Double temp_d = Double.parseDouble(temp);
+
+                temp_d = temp_d / 1.5;
+
+                DecimalFormat df = new DecimalFormat("0.000");
+                String result = df.format(temp_d) + "    AUD";
+
+                aud.setText(result);
+
+//                if (s.equals(".")){
+//                    s = "";
+//                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
 
     }
 
