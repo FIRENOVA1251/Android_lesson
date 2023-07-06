@@ -54,12 +54,12 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
 
                     Intent intent = new Intent();
                     Bundle bundle = new Bundle();
-                    intent.setClass(MainActivity.this, ListDetailActivity.class);
-                    // title , content
-                    bundle.putString("text", "Detail Page");
-                    intent.putExtras(bundle);
-
-                    startActivity(intent);
+//                    intent.setClass(MainActivity.this, ListDetailActivity.class);
+//                    // title , content
+//                    bundle.putString("text", "Detail Page");
+//                    intent.putExtras(bundle);
+//
+//                    startActivity(intent);
 
 
                 }
