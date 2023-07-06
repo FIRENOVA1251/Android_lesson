@@ -2,8 +2,17 @@
     <string name="app_name">Nova Application</string>
 
 
-    <string name="default_data">***</string>
+<!-- element page -->
+    <string name="BMI">BMI</string>
+    <string name="HEIGHT">HEIGHT</string>
 
+
+<!-- list page -->
+
+    <string name="default_data">***</string>
+    <string name="default_time">12:34</string>
+
+    <string name="default_number">0</string>
 
 
 </resources>

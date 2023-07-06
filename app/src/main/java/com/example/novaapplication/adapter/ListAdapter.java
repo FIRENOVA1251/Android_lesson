@@ -1,15 +1,20 @@
 package com.example.novaapplication.adapter;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.novaapplication.ElementActivity;
+import com.example.novaapplication.ListDetailActivity;
+import com.example.novaapplication.MainActivity;
 import com.example.novaapplication.R;
 
 import org.json.JSONException;
@@ -33,6 +38,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
 
         TextView name, content;
         ImageView msgSelfie;
+        LinearLayout msg_item;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -46,9 +52,24 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
                 @Override
                 public void onClick(View view) {
 
-                    content.setText("1233gg");
+                    Intent intent = new Intent();
+                    Bundle bundle = new Bundle();
+                    intent.setClass(MainActivity.this, ListDetailActivity.class);
+                    // title , content
+                    bundle.putString("text", "Detail Page");
+                    intent.putExtras(bundle);
+
+                    startActivity(intent);
 
 
+                }
+            });
+
+            msg_item = itemView.findViewById(R.id.message_item);
+            msg_item.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    content.setText("XXXXX");
                 }
             });
 
@@ -68,6 +89,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     @Override
     public ListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
+        // Tell which list item view will be connected.
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item, parent, false);
 
         return new ViewHolder(view);
@@ -87,7 +109,6 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     private void processData(){
         if(listData != null && listData.length > 0){
             for(int i = 0; i<listData.length; i++){
-
 
                 try{
                     JSONObject jsonObject = new JSONObject(listData[i]);

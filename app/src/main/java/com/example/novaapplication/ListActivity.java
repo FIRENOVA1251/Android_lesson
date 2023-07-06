@@ -21,7 +21,7 @@ public class ListActivity extends AppCompatActivity {
     public RecyclerView recyclerView;
     public ListAdapter listAdapter;
     public ArrayList<String> mData = new ArrayList<>();
-    public ImageView imageView;
+    //public ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +38,7 @@ public class ListActivity extends AppCompatActivity {
                 " \"content\":\"kkkkk\"\n" +
                 "}";
 
-        for (int i = 1; i < 10; i++){
+        for (int i = 1; i < 6; i++){
             mData.add(json1);
             mData.add(json2);
         }
@@ -48,7 +48,6 @@ public class ListActivity extends AppCompatActivity {
     }
 
     private void init_View(){
-
 
 
         recyclerView = findViewById(R.id.list);

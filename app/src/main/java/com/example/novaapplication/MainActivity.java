@@ -10,7 +10,6 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -20,7 +19,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     TextView left_text, right_text;
-    Button left_btn, right_btn, next, element_page, list_page;
+    Button left_btn, right_btn, next, element_page, element_no_bmi_page, list_page;
 
 
     // Declare PopupWindow (container)
@@ -87,14 +86,19 @@ public class MainActivity extends AppCompatActivity {
 
                 case R.id.next:
 
-
                     popWindow(popupView);
 
                     break;
                 case R.id.element_page:
 
                     Intent intent = new Intent();
+                    Bundle bundle = new Bundle();
                     intent.setClass(MainActivity.this, ElementActivity.class);
+                    // title , content
+                    bundle.putString("style", "original");
+                    bundle.putInt("weight", 0);
+                    intent.putExtras(bundle);
+
                     startActivity(intent);
 
                     WindowManager.LayoutParams lp = getWindow().getAttributes();
@@ -102,6 +106,24 @@ public class MainActivity extends AppCompatActivity {
                     getWindow().setAttributes(lp);
                     popupWindow.dismiss();
                     break;
+
+                case R.id.element_no_bmi_page:
+
+                    intent = new Intent();
+                    bundle = new Bundle();
+                    intent.setClass(MainActivity.this, ElementActivity.class);
+                    // title , content
+                    bundle.putString("style", "no_bmi");
+                    bundle.putInt("weight", 123);
+                    intent.putExtras(bundle);
+                    startActivity(intent);
+
+                    lp = getWindow().getAttributes();
+                    lp.alpha =  1f;
+                    getWindow().setAttributes(lp);
+                    popupWindow.dismiss();
+                    break;
+
                 case R.id.list_page:
 
                     intent = new Intent();
@@ -169,6 +191,9 @@ public class MainActivity extends AppCompatActivity {
 
         element_page = popupView.findViewById(R.id.element_page);
         element_page.setOnClickListener(actionBtnOnClick);
+
+        element_no_bmi_page = popupView.findViewById(R.id.element_no_bmi_page);
+        element_no_bmi_page.setOnClickListener(actionBtnOnClick);
 
         list_page = popupView.findViewById(R.id.list_page);
         list_page.setOnClickListener(actionBtnOnClick);

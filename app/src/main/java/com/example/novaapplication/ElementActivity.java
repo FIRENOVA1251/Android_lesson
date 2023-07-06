@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,8 +23,10 @@ public class ElementActivity extends AppCompatActivity {
     TextView result_text, comment, aud;
     Button calculate;
     ImageView imageView, imageView2;
+    LinearLayout bmi_layout;
 
-
+    String style= "";
+    int weight = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,10 +34,30 @@ public class ElementActivity extends AppCompatActivity {
         setContentView(R.layout.activity_element);
 
 
+        Bundle bundle = getIntent().getExtras();
+        style = bundle.getString("style");
+        weight = bundle.getInt("weight");
+
         init_View();
+
+        if (style.equals("original")){
+            // original
+            bmi_layout.setVisibility(View.VISIBLE);
+
+        }else if(style.equals("no_bmi")){
+            // no_bmi
+            bmi_layout.setVisibility(View.GONE);
+
+        }else if(style.equals("123")){
+
+        }
+
+
     }
 
     private void init_View(){
+
+        bmi_layout = findViewById(R.id.bmi_layout);
 
         imageView2 = findViewById(R.id.back);
         imageView2.setOnClickListener(actionBtnOnClick);
@@ -51,6 +74,7 @@ public class ElementActivity extends AppCompatActivity {
         usd = findViewById(R.id.usd);
         aud = findViewById(R.id.aud);
 
+
         usd.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -63,12 +87,13 @@ public class ElementActivity extends AppCompatActivity {
                 String temp = usd.getText().toString();
                 Double temp_d = Double.parseDouble(temp);
 
-                temp_d = temp_d / 1.5;
+                temp_d = temp_d * 1.5;
 
                 DecimalFormat df = new DecimalFormat("0.000");
                 String result = df.format(temp_d) + "    AUD";
 
                 aud.setText(result);
+
 
 //                if (s.equals(".")){
 //                    s = "";
